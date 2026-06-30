@@ -9,6 +9,10 @@
       <stop offset="0" stop-color="#667eea"/>
       <stop offset="1" stop-color="#764ba2"/>
     </linearGradient>
+    <linearGradient id="rocket" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f0f3ff"/>
+      <stop offset="1" stop-color="#c3cbe8"/>
+    </linearGradient>
     <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
       <feGaussianBlur stdDeviation="8" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
@@ -26,8 +30,22 @@
     <circle cx="1110" cy="480" r="3"/><circle cx="1050" cy="480" r="3"/><circle cx="990" cy="480" r="3"/>
   </g>
 
-  <!-- floating rocket emoji-ish -->
-  <text x="980" y="180" font-size="120" opacity="0.9">🚀</text>
+  <!-- vector rocket (no emoji, font-independent) -->
+  <g transform="translate(1000,110) rotate(35)" filter="url(#glow)">
+    <!-- flame -->
+    <path d="M0,96 C-12,120 -6,150 0,168 C6,150 12,120 0,96 Z" fill="#ffb84d"/>
+    <path d="M0,100 C-7,118 -4,140 0,152 C4,140 7,118 0,100 Z" fill="#ff7a45"/>
+    <!-- body -->
+    <path d="M0,-20 C26,8 30,56 22,96 L-22,96 C-30,56 -26,8 0,-20 Z" fill="url(#rocket)" stroke="#9aa6d6" stroke-width="2"/>
+    <!-- window -->
+    <circle cx="0" cy="34" r="13" fill="#1f6feb" stroke="#0d1117" stroke-width="3"/>
+    <circle cx="0" cy="34" r="5" fill="#cfe6ff"/>
+    <!-- fins -->
+    <path d="M-22,96 L-44,124 L-22,116 Z" fill="#764ba2"/>
+    <path d="M22,96 L44,124 L22,116 Z" fill="#764ba2"/>
+    <!-- nose tip -->
+    <circle cx="0" cy="-22" r="4" fill="#ff5f56"/>
+  </g>
 
   <!-- terminal window -->
   <g transform="translate(760,300)">
@@ -37,11 +55,11 @@
     <circle cx="26" cy="20" r="7" fill="#ff5f56"/>
     <circle cx="52" cy="20" r="7" fill="#ffbd2e"/>
     <circle cx="78" cy="20" r="7" fill="#27c93f"/>
-    <text x="24" y="86" font-size="20" fill="#7ee787" font-family="monospace">$ git push origin main</text>
-    <text x="24" y="120" font-size="20" fill="#79c0ff" font-family="monospace">  Building site...</text>
-    <text x="24" y="154" font-size="20" fill="#79c0ff" font-family="monospace">  Deploying to Pages...</text>
-    <text x="24" y="188" font-size="20" fill="#7ee787" font-family="monospace">  ✓ Published!</text>
-    <text x="24" y="222" font-size="20" fill="#e6edf3" font-family="monospace">$ <tspan fill="#ffffff">▋</tspan></text>
+    <text x="24" y="86" font-size="20" fill="#7ee787">❯ 推送文章到仓库</text>
+    <text x="24" y="120" font-size="20" fill="#79c0ff">  正在构建站点……</text>
+    <text x="24" y="154" font-size="20" fill="#79c0ff">  正在部署上线……</text>
+    <text x="24" y="188" font-size="20" fill="#7ee787">  ✓ 发布成功！</text>
+    <text x="24" y="222" font-size="20" fill="#e6edf3">❯ <tspan fill="#ffffff">▋</tspan></text>
   </g>
 
   <!-- title block -->
@@ -54,5 +72,5 @@
   <text x="80" y="548" font-size="28" fill="#b8c0ff">附：一个让文章凭空消失的踩坑实录</text>
 
   <!-- footer tag -->
-  <text x="80" y="592" font-size="22" fill="#6b7280" font-family="monospace">zz9mm.github.io · Chirpy + Jekyll</text>
+  <text x="80" y="592" font-size="22" fill="#6b7280">一个下午 · 零成本 · 全球可访问</text>
 </svg>
